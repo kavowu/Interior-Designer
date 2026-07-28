@@ -14,19 +14,21 @@ import {
   WandSparkles,
 } from "lucide-react";
 
+const assetPath = (fileName: string) => `${import.meta.env.BASE_URL}images/${fileName}`;
+
 export const assets = {
-  hero: "/images/hero-bg.png",
-  challengeVisibility: "/images/challenge-visibility.png",
-  challengeValue: "/images/challenge-value.png",
-  challengeTrust: "/images/challenge-trust.png",
-  painDrying: "/images/pain-drying.png",
-  painKitchen: "/images/pain-kitchen.png",
-  painShoe: "/images/pain-shoe.png",
-  painWardrobe: "/images/pain-wardrobe.png",
-  painBathroom: "/images/pain-bathroom.png",
-  technology: "/images/wetop-tech.png",
-  serviceFlow: "/images/service-flow.png",
-  comparison: "/images/comparison-visual.png",
+  hero: assetPath("hero-bg.png"),
+  challengeVisibility: assetPath("challenge-visibility.png"),
+  challengeValue: assetPath("challenge-value.png"),
+  challengeTrust: assetPath("challenge-trust.png"),
+  painDrying: assetPath("pain-drying.png"),
+  painKitchen: assetPath("pain-kitchen.png"),
+  painShoe: assetPath("pain-shoe.png"),
+  painWardrobe: assetPath("pain-wardrobe.png"),
+  painBathroom: assetPath("pain-bathroom.png"),
+  technology: assetPath("wetop-tech.png"),
+  serviceFlow: assetPath("service-flow.png"),
+  comparison: assetPath("comparison-visual.png"),
 } as const;
 
 export const navigationItems = [

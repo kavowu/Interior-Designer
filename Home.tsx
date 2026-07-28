@@ -31,7 +31,7 @@ type SectionHeadingProps = {
   light?: boolean;
 };
 
-const logoSrc = "/images/WETOP-LOGO-紅.png";
+const logoSrc = `${import.meta.env.BASE_URL}images/WETOP-LOGO-紅.png`;
 
 function SectionHeading({ eyebrow, title, description, light = false }: SectionHeadingProps) {
   return (
