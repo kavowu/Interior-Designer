@@ -178,13 +178,27 @@
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 84px;
+    font-size: 19px;
   }
 
   body {
     min-width: 320px;
-    font-family: "Noto Serif TC", serif;
+    font-family: "Noto Sans TC", "Noto Serif TC", serif;
+    line-height: 1.9;
     background: #faf9f6;
     color: #2e3731;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  p,
+  li,
+  blockquote,
+  input,
+  select,
+  textarea,
+  button {
+    line-height: 1.9;
   }
 
   button,
@@ -235,10 +249,10 @@
     align-items: center;
     gap: 0.55rem;
     color: #244d49;
-    font-family: "Noto Serif TC", serif;
-    font-size: 0.86rem;
+    font-family: "Noto Sans TC", "Noto Serif TC", serif;
+    font-size: 0.92rem;
     font-weight: 500;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.025em;
     line-height: 1;
     text-decoration: none;
     white-space: nowrap;
@@ -407,9 +421,9 @@
     max-width: 720px;
     margin: 1.4rem auto 0;
     color: #43504b;
-    font-size: clamp(0.9rem, 1.3vw, 1.04rem);
+    font-size: clamp(1.02rem, 1.45vw, 1.14rem);
     letter-spacing: 0.025em;
-    line-height: 2;
+    line-height: 2.05;
   }
 
   .hero-actions {
@@ -470,7 +484,7 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     width: min(100%, 750px);
-    gap: 0.9rem;
+    line-height: 1.9;
     margin-top: 2.45rem;
   }
 
@@ -535,8 +549,8 @@
   .section-heading > p {
     margin: 0;
     color: #69736d;
-    font-size: 0.92rem;
-    line-height: 1.9;
+    font-size: 1.06rem;
+    line-height: 1.95;
   }
 
   .section-heading-light .section-kicker {
@@ -607,23 +621,23 @@
   .challenge-content { padding: clamp(1.5rem, 3.4vw, 2.4rem); }
   .challenge-eyebrow { margin: 0; color: #ae8c3d; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; }
   .challenge-content h3 { margin: 0.45rem 0 0; color: #273d39; font-size: clamp(1.25rem, 2vw, 1.62rem); font-weight: 700; letter-spacing: -0.035em; line-height: 1.42; }
-  .challenge-lead { margin: 0.8rem 0 0; color: #167277; font-size: 0.88rem; font-weight: 600; line-height: 1.8; }
+  .challenge-lead { margin: 0.8rem 0 0; color: #167277; font-size: 1.02rem; font-weight: 600; line-height: 1.88; }
   .challenge-copy { display: grid; gap: 0.9rem; margin-top: 1.25rem; }
   .challenge-copy h4,
-  .pain-detail h4 { margin: 0; color: #a8893f; font-size: 0.71rem; font-weight: 700; letter-spacing: 0.07em; }
-  .challenge-copy p { margin: 0.32rem 0 0; color: #5f6963; font-size: 0.79rem; line-height: 1.75; }
+  .pain-detail h4 { margin: 0; color: #a8893f; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.07em; }
+  .challenge-copy p { margin: 0.32rem 0 0; color: #5f6963; font-size: 0.95rem; line-height: 1.86; }
   .challenge-highlights { display: grid; gap: 0.45rem; padding: 0; margin: 1.2rem 0 0; list-style: none; }
-  .challenge-highlights li { display: flex; align-items: flex-start; gap: 0.45rem; color: #3e645e; font-size: 0.76rem; line-height: 1.55; }
+  .challenge-highlights li { display: flex; align-items: flex-start; gap: 0.45rem; color: #3e645e; font-size: 0.92rem; line-height: 1.72; }
   .challenge-highlights svg { flex: 0 0 auto; margin-top: 0.08rem; color: #0d7377; }
 
   .script-callout { margin-top: 1.4rem; padding: 0.9rem; border: 1px solid rgb(201 168 76 / 34%); border-radius: 0.7rem; background: #fffcf4; }
-  .script-callout-head { display: flex; align-items: center; justify-content: space-between; gap: 0.8rem; color: #725c25; font-size: 0.75rem; font-weight: 700; }
+  .script-callout-head { display: flex; align-items: center; justify-content: space-between; gap: 0.8rem; color: #725c25; font-size: 0.88rem; font-weight: 700; }
   .copy-button,
-  .icon-copy-button { display: inline-flex; align-items: center; justify-content: center; gap: 0.35rem; color: #0d7377; border: 0; border-radius: 0.42rem; background: transparent; font-family: inherit; font-size: 0.72rem; font-weight: 700; transition: color 160ms cubic-bezier(0.23, 1, 0.32, 1), background-color 160ms cubic-bezier(0.23, 1, 0.32, 1), transform 160ms cubic-bezier(0.23, 1, 0.32, 1); }
+  .icon-copy-button { display: inline-flex; align-items: center; justify-content: center; gap: 0.35rem; color: #0d7377; border: 0; border-radius: 0.42rem; background: transparent; font-family: inherit; font-size: 0.82rem; font-weight: 700; transition: color 160ms cubic-bezier(0.23, 1, 0.32, 1), background-color 160ms cubic-bezier(0.23, 1, 0.32, 1), transform 160ms cubic-bezier(0.23, 1, 0.32, 1); }
   .copy-button { padding: 0.3rem 0.4rem; }
   .copy-button:hover,
   .icon-copy-button:hover { color: #07585c; background: rgb(13 115 119 / 9%); }
-  .script-callout blockquote { margin: 0.65rem 0 0; color: #535d56; font-family: "Cormorant Garamond", "Noto Serif TC", serif; font-size: 0.95rem; font-style: italic; line-height: 1.72; }
+  .script-callout blockquote { margin: 0.65rem 0 0; color: #535d56; font-family: "Cormorant Garamond", "Noto Serif TC", serif; font-size: 1.08rem; font-style: italic; line-height: 1.8; }
 
   .pain-section { background: linear-gradient(180deg, #f5f7f3 0%, #faf9f6 100%); }
   .pain-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
@@ -635,11 +649,11 @@
   .pain-card:hover .pain-image { transform: scale(1.055); }
   .pain-icon { position: absolute; z-index: 1; left: 0.9rem; bottom: 0.85rem; width: 2rem; height: 2rem; color: #fcfbf5; border: 1px solid rgb(255 255 255 / 45%); border-radius: 0.52rem; background: rgb(12 100 103 / 88%); box-shadow: 0 4px 13px rgb(0 0 0 / 12%); }
   .pain-card-body { padding: 1.08rem; }
-  .pain-card h3 { margin: 0; color: #2b4540; font-size: 1.04rem; font-weight: 700; letter-spacing: -0.025em; }
-  .pain-tagline { margin: 0.25rem 0 1.2rem; color: #877244; font-size: 0.77rem; }
+  .pain-card h3 { margin: 0; color: #2b4540; font-size: 1.12rem; font-weight: 700; letter-spacing: -0.025em; }
+  .pain-tagline { margin: 0.25rem 0 1.2rem; color: #877244; font-size: 0.95rem; }
   .pain-detail { padding-top: 0.8rem; border-top: 1px solid rgb(106 115 103 / 13%); }
   .pain-detail + .pain-detail { margin-top: 0.8rem; }
-  .pain-detail p { margin: 0.36rem 0 0; color: #626b65; font-size: 0.74rem; line-height: 1.72; }
+  .pain-detail p { margin: 0.36rem 0 0; color: #626b65; font-size: 0.9rem; line-height: 1.82; }
   .pain-value h4 { color: #0d7377; }
   .pain-grid .pain-card:nth-child(4) { grid-column: 1 / span 1; }
 
@@ -651,10 +665,10 @@
   .proposal-icon { position: absolute; z-index: 1; left: 0.75rem; bottom: 0.72rem; width: 1.82rem; height: 1.82rem; color: #f9f8f2; border-radius: 0.5rem; background: #0d7377; }
   .proposal-content { position: relative; padding: 0.9rem; }
   .proposal-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.5rem; }
-  .proposal-heading h3 { margin: 0; color: #274743; font-size: 0.9rem; line-height: 1.4; }
+  .proposal-heading h3 { margin: 0; color: #274743; font-size: 1.02rem; line-height: 1.55; }
   .icon-copy-button { width: 1.82rem; height: 1.82rem; flex: 0 0 auto; color: #13757a; }
   .quote-mark { margin-top: 0.85rem; color: #d1b161; opacity: 0.8; }
-  .proposal-content blockquote { margin: 0.18rem 0 0; color: #59645c; font-family: "Cormorant Garamond", "Noto Serif TC", serif; font-size: 0.88rem; font-style: italic; line-height: 1.78; }
+  .proposal-content blockquote { margin: 0.18rem 0 0; color: #59645c; font-family: "Cormorant Garamond", "Noto Serif TC", serif; font-size: 1rem; font-style: italic; line-height: 1.85; }
 
   .technology-section { background: #faf9f6; }
   .technology-hero { height: clamp(15rem, 30vw, 22rem); border-radius: 0.96rem; box-shadow: 0 18px 35px rgb(35 48 40 / 11%); }
@@ -666,11 +680,11 @@
   .technology-card { padding: 1.15rem; border: 1px solid rgb(91 104 94 / 12%); border-radius: 0.8rem; background: #fffefa; box-shadow: 0 12px 25px rgb(39 51 42 / 5%); }
   .technology-icon { width: 2.3rem; height: 2.3rem; color: #e8ddb3; border-radius: 0.65rem; background: #126e71; }
   .technology-card h3 { margin: 0.75rem 0 0; color: #294640; font-size: 0.95rem; line-height: 1.5; }
-  .technology-card p { margin: 0.55rem 0 0; color: #616b64; font-size: 0.75rem; line-height: 1.75; }
-  .not-product-row { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.75rem 1rem; margin-top: 1.6rem; color: #706039; font-size: 0.78rem; text-align: center; }
+  .technology-card p { margin: 0.55rem 0 0; color: #616b64; font-size: 0.92rem; line-height: 1.9; }
+  .not-product-row { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.75rem 1rem; margin-top: 1.6rem; color: #706039; font-size: 0.92rem; text-align: center; }
   .not-product-row > span { font-weight: 700; }
   .not-product-row > div { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.42rem; }
-  .not-product-row em { padding: 0.25rem 0.52rem; color: #a3564d; border: 1px solid rgb(163 86 77 / 24%); border-radius: 999px; background: #fff7f4; font-size: 0.7rem; font-style: normal; }
+  .not-product-row em { padding: 0.25rem 0.52rem; color: #a3564d; border: 1px solid rgb(163 86 77 / 24%); border-radius: 999px; background: #fff7f4; font-size: 0.82rem; font-style: normal; }
 
   .service-section { background: linear-gradient(180deg, #f3f7f4 0%, #faf9f6 100%); }
   .service-visual { height: clamp(10rem, 19vw, 14rem); border-radius: 0.9rem; box-shadow: 0 16px 30px rgb(45 59 49 / 9%); }
@@ -679,14 +693,14 @@
   .service-number { display: block; color: #d4b55d; font-family: "Cormorant Garamond", serif; font-size: 2.25rem; font-weight: 700; line-height: 1; }
   .service-icon { width: 2.45rem; height: 2.45rem; margin: 0.65rem auto 0; color: #eef0dc; border-radius: 999px; background: #0d7377; }
   .service-step h3 { margin: 0.7rem 0 0; color: #294640; font-size: 1rem; }
-  .service-step p { margin: 0.5rem 0 0; color: #657069; font-size: 0.78rem; line-height: 1.75; }
+  .service-step p { margin: 0.5rem 0 0; color: #657069; font-size: 0.92rem; line-height: 1.9; }
   .service-connector { position: absolute; z-index: 1; top: 50%; left: calc(100% + 0.1rem); width: calc(1rem - 0.2rem); border-top: 1px dashed #c8b36e; }
 
   .comparison-section { background: linear-gradient(120deg, #135a5c 0%, #0b7276 52%, #0c6468 100%); }
   .comparison-visual { height: clamp(13rem, 25vw, 18.5rem); border: 1px solid rgb(255 255 255 / 22%); border-radius: 0.92rem; box-shadow: 0 18px 35px rgb(0 41 44 / 21%); }
   .comparison-table { overflow: hidden; margin-top: 1.15rem; border: 1px solid rgb(255 255 255 / 22%); border-radius: 0.88rem; background: rgb(255 255 255 / 94%); box-shadow: 0 18px 33px rgb(0 41 44 / 15%); }
   .comparison-table-row { display: grid; grid-template-columns: 0.78fr 1fr 1.15fr; }
-  .comparison-table-row > div { display: flex; align-items: center; padding: 0.84rem 1rem; border-top: 1px solid rgb(85 101 90 / 10%); color: #52605a; font-size: 0.78rem; line-height: 1.65; }
+  .comparison-table-row > div { display: flex; align-items: center; padding: 0.84rem 1rem; border-top: 1px solid rgb(85 101 90 / 10%); color: #52605a; font-size: 0.95rem; line-height: 1.8; }
   .comparison-table-row > div + div { border-left: 1px solid rgb(85 101 90 / 10%); }
   .comparison-table-head > div { color: #fbfaf5; border-top: 0; background: #276d6f; font-size: 0.8rem; font-weight: 700; }
   .comparison-label { color: #3c514b !important; font-weight: 700; background: #f5f4ec; }
@@ -743,7 +757,7 @@
     align-items: center;
     gap: 1.45rem;
     color: #63716c;
-    font-size: 0.77rem;
+    font-size: 0.9rem;
     letter-spacing: 0.035em;
   }
 
@@ -765,7 +779,7 @@
   .footer-quote {
     margin: 0;
     color: #7b8580;
-    font-size: 0.68rem;
+    font-size: 0.8rem;
     line-height: 1.8;
   }
 
@@ -773,7 +787,7 @@
     margin-top: 0.4rem;
     color: #8b938f;
     font-family: "Noto Serif TC", serif;
-    font-size: 0.66rem;
+    font-size: 0.78rem;
   }
 
   .mobile-menu-overlay {
@@ -895,12 +909,12 @@
     .page-container,
     .site-header-inner { width: min(100% - 1.5rem, 1180px); }
     .site-header-inner { min-height: 62px; }
-    .site-brand { font-size: 0.75rem; }
+    .site-brand { font-size: 0.82rem; }
     .site-brand strong { font-size: 0.98rem; }
     .brand-symbol { width: 1.9rem; height: 1.9rem; }
     .hero-content { align-items: flex-start; padding-top: 102px; text-align: left; }
     .hero-content h1 { justify-content: flex-start; font-size: clamp(2.1rem, 11vw, 3.05rem); }
-    .hero-lead { margin-inline: 0; font-size: 0.85rem; line-height: 1.9; }
+    .hero-lead { margin-inline: 0; font-size: 0.95rem; line-height: 1.95; }
     .hero-actions { justify-content: flex-start; width: 100%; }
     .hero-actions .button { flex: 1 1 100%; }
     .sea-cards { grid-template-columns: 1fr; margin-top: 1.65rem; }
@@ -908,12 +922,12 @@
     .section-heading { margin-bottom: 2rem; text-align: left; }
     .section-heading .section-kicker { margin-left: 0; }
     .section-heading .section-divider { margin-left: 0; }
-    .section-heading h2 { font-size: 1.64rem; }
-    .section-heading > p { font-size: 0.84rem; line-height: 1.85; }
+    .section-heading h2 { font-size: 1.8rem; }
+    .section-heading > p { font-size: 0.95rem; line-height: 1.9; }
     .challenge-image-wrap { min-height: 12.5rem; }
     .challenge-content { padding: 1.25rem; }
-    .challenge-copy p { font-size: 0.76rem; }
-    .script-callout blockquote { font-size: 0.87rem; }
+    .challenge-copy p { font-size: 0.9rem; }
+    .script-callout blockquote { font-size: 1rem; }
     .pain-grid,
     .scripts-grid,
     .technology-grid,
@@ -929,16 +943,20 @@
     .comparison-table { overflow: visible; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
     .comparison-table-row { display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; margin-bottom: 0.75rem; border: 1px solid rgb(255 255 255 / 31%); border-radius: 0.72rem; background: #fffefa; }
     .comparison-table-head { display: none; }
-    .comparison-table-row > div { min-height: auto; padding: 0.7rem; border-top: 0; font-size: 0.72rem; }
+    .comparison-table-row > div { min-height: auto; padding: 0.7rem; border-top: 0; font-size: 0.86rem; }
     .comparison-label { grid-column: 1 / -1; justify-content: center !important; color: #f5f4ec !important; background: #2b7072; }
     .comparison-old::before,
-    .comparison-new::before { display: block; margin-bottom: 0.22rem; font-size: 0.64rem; font-weight: 700; }
+    .comparison-new::before { display: block; margin-bottom: 0.22rem; font-size: 0.76rem; font-weight: 700; }
     .comparison-old::before { content: "一般設計師"; color: #b07861; }
     .comparison-new::before { content: "健康設計師"; color: #0d7377; }
     .form-two-columns { grid-template-columns: 1fr; }
     .consultation-form { padding: 1.15rem; }
     .pain-choice-row { gap: 0.42rem; }
-    .pain-choice { font-size: 0.69rem; }
+    .pain-choice { font-size: 0.9rem; }
+  }
+
+  @media (max-width: 620px) {
+    html { font-size: 18px; }
   }
 
   @media (prefers-reduced-motion: reduce) {
