@@ -144,9 +144,9 @@ export default function Home() {
     <div className="wetop-site">
       <header className="site-header">
         <div className="site-header-inner">
-          <a className="site-brand" href="#top" aria-label="WETOP 設計師健康方案首頁">
+          <a className="site-brand" href="#top" aria-label="設計師健康方案首頁">
             <BrandMark />
-            <span><strong>WETOP</strong> 設計師健康方案</span>
+            <span>設計師健康方案</span>
           </a>
 
           <nav className="desktop-navigation" aria-label="主要導覽">
@@ -173,7 +173,7 @@ export default function Home() {
             <div className="mobile-menu-header">
               <a className="site-brand mobile-menu-brand" href="#top" onClick={() => setMobileMenuOpen(false)}>
                 <BrandMark />
-                <span><strong>WETOP</strong> 設計師健康方案</span>
+                <span>設計師健康方案</span>
               </a>
             <button
               type="button"
@@ -230,7 +230,7 @@ export default function Home() {
           <div className="page-container">
             <SectionHeading
               eyebrow="設計師三大難題"
-              title="設計師的三大難題，WETOP 如何破解？"
+              title="設計師三大難題，WETOP 如何破解"
               description="價格戰與同質化、難以體現的價值、客戶的隱性焦慮——這三個結構性難題，WETOP 用「健康」逐一破解，讓設計師從紅海競爭中突圍。"
             />
 
@@ -520,7 +520,7 @@ export default function Home() {
           <div className="footer-brand-block">
             <a className="site-brand footer-brand" href="#top">
               <BrandMark />
-              <span><strong>WETOP</strong> 設計師健康方案</span>
+              <span>設計師健康方案</span>
             </a>
           </div>
           <div className="footer-contact" aria-label="聯絡資訊">

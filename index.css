@@ -483,40 +483,48 @@
   .sea-cards {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    width: min(100%, 750px);
+    gap: 1.15rem;
+    width: min(100%, 940px);
     line-height: 1.9;
     margin-top: 2.45rem;
   }
 
   .sea-card {
-    min-height: 122px;
-    padding: 1.05rem 1.15rem;
-    border: 1px solid rgb(255 255 255 / 55%);
-    border-radius: 0.75rem;
-    background: rgb(255 255 255 / 56%);
-    box-shadow: 0 12px 30px rgb(76 79 61 / 6%);
+    min-height: 212px;
+    padding: 1.45rem 1.65rem;
+    border: 1px solid rgb(255 255 255 / 67%);
+    border-radius: 0.95rem;
+    background: rgb(255 255 255 / 65%);
+    box-shadow: 0 16px 36px rgb(76 79 61 / 9%);
     text-align: left;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(10px);
   }
 
   .sea-card-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-size: 0.94rem;
+    display: flex;
+    align-items: center;
+    gap: 0.52rem;
+    margin-bottom: 0.82rem;
+    font-family: "Noto Serif TC", serif;
+    font-size: clamp(1.58rem, 2.1vw, 1.95rem);
     font-weight: 700;
+    line-height: 1.2;
   }
 
   .sea-card p {
     margin: 0;
     color: #58615a;
-    font-size: 0.76rem;
-    line-height: 1.7;
+    font-size: clamp(1rem, 1.2vw, 1.12rem);
+    line-height: 1.92;
+    letter-spacing: 0.005em;
   }
 
   .sea-card-red { border-color: rgb(178 87 73 / 24%); }
   .sea-card-red .sea-card-label { color: #b8574d; }
+  .sea-card-red .sea-card-label::before { content: "↘"; color: #e06f66; }
   .sea-card-blue { border-color: rgb(13 115 119 / 27%); }
   .sea-card-blue .sea-card-label { color: #0a686b; }
+  .sea-card-blue .sea-card-label::before { content: "↗"; color: #0b7d7f; }
 
   .content-section { padding-block: 6.4rem; }
   .challenges-section { background: #faf9f6; }
@@ -917,7 +925,10 @@
     .hero-lead { margin-inline: 0; font-size: 0.95rem; line-height: 1.95; }
     .hero-actions { justify-content: flex-start; width: 100%; }
     .hero-actions .button { flex: 1 1 100%; }
-    .sea-cards { grid-template-columns: 1fr; margin-top: 1.65rem; }
+    .sea-cards { grid-template-columns: 1fr; gap: 0.82rem; margin-top: 1.95rem; }
+    .sea-card { min-height: auto; padding: 1.15rem 1.2rem; }
+    .sea-card-label { margin-bottom: 0.62rem; font-size: clamp(1.34rem, 6vw, 1.65rem); }
+    .sea-card p { font-size: 0.99rem; line-height: 1.82; }
     .content-section { padding-block: 4.5rem; }
     .section-heading { margin-bottom: 2rem; text-align: left; }
     .section-heading .section-kicker { margin-left: 0; }
