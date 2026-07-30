@@ -71,6 +71,11 @@ export default function Home() {
   const [selectedPains, setSelectedPains] = useState<Set<string>>(new Set());
   const [isSubmitting, setIsSubmitting] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
+  const formsubmitEndpoint = import.meta.env.VITE_FORMSUBMIT_ENDPOINT?.trim();
+  const formsubmitEmail = import.meta.env.VITE_FORMSUBMIT_EMAIL?.trim();
+  const formsubmitAction =
+    formsubmitEndpoint ||
+    (formsubmitEmail ? `https://formsubmit.co/${encodeURIComponent(formsubmitEmail)}` : "");
 
   const copyToClipboard = useCopyToClipboard();
   const encodeForm = (payload: Record<string, string>) => new URLSearchParams(payload).toString();
@@ -90,26 +95,27 @@ export default function Home() {
     const formData = new FormData(form);
     const painArray = Array.from(selectedPains);
 
-    if (import.meta.env.DEV) {
-      toast.success("本機預覽模式已模擬送出", {
-        description: "部署到 Netlify 後，表單資料會進入後台 submissions",
-        duration: 4000,
+    if (!formsubmitAction) {
+      toast.error("尚未設定 FormSubmit", {
+        description: "請設定 VITE_FORMSUBMIT_EMAIL 或 VITE_FORMSUBMIT_ENDPOINT 後再送出",
+        duration: 4500,
       });
-      formRef.current?.reset();
-      setSelectedPains(new Set());
       return;
     }
 
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("/", {
+      const response = await fetch(formsubmitAction, {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
+          Accept: "application/json",
         },
         body: encodeForm({
-          "form-name": "consultation",
+          _subject: "新的健康設計諮詢表單",
+          _captcha: "false",
+          _next: "false",
           name: String(formData.get("name") || ""),
           phone: String(formData.get("phone") || ""),
           email: String(formData.get("email") || ""),
@@ -121,19 +127,29 @@ export default function Home() {
       });
 
       if (!response.ok) {
-        throw new Error("submit-failed");
+        let description = "請稍後再試，或直接來電與我們聯繫。";
+        try {
+          const payload = await response.json();
+          const firstError = Array.isArray(payload?.errors) ? payload.errors[0]?.message : "";
+          if (typeof firstError === "string" && firstError.trim()) {
+            description = firstError;
+          }
+        } catch {
+          // Keep fallback error message when response body is not JSON.
+        }
+        throw new Error(description);
       }
 
       toast.success("預約諮詢已送出！", {
-        description: "我們將儘快與您聯繫，安排健康設計諮詢",
+        description: "我們將儘快透過電話或 Email 與您聯繫",
         duration: 4000,
       });
       formRef.current?.reset();
       setSelectedPains(new Set());
-    } catch {
+    } catch (error) {
       toast.error("送出失敗", {
-        description: "請確認網站已部署到 Netlify，或稍後再試",
-        duration: 4000,
+        description: error instanceof Error ? error.message : "請稍後再試",
+        duration: 4500,
       });
     } finally {
       setIsSubmitting(false);
@@ -467,13 +483,13 @@ export default function Home() {
               className="consultation-form"
               name="consultation"
               method="POST"
-              data-netlify="true"
-              data-netlify-honeypot="company"
+              action={formsubmitAction || undefined}
               ref={formRef}
               onSubmit={handleFormSubmit}
             >
-              <input type="hidden" name="form-name" value="consultation" />
-              <input type="hidden" name="company" />
+              <input type="hidden" name="_subject" value="新的健康設計諮詢表單" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_next" value="false" />
               <div className="form-two-columns">
                 <label>姓名 <b>*</b><input id="name" name="name" type="text" placeholder="您的稱呼" required /></label>
                 <label>聯絡電話 <b>*</b><input id="phone" name="phone" type="tel" placeholder="09XX-XXX-XXX" required /></label>
